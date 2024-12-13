@@ -20,7 +20,7 @@ public class Main {
                 UI.clearScreen();
                 UI.printBoard(chessMatch.getPieces());
                 System.out.println();
-                System.out.println("Source: ");
+                System.out.print("Source: ");
                 ChessPosition source = UI.readChessPosition(sc);
 
                 boolean[][] possibleMoves = chessMatch.possibleMoves(source);
@@ -28,17 +28,17 @@ public class Main {
                 UI.printBoard(chessMatch.getPieces(), possibleMoves);
 
                 System.out.println();
-                System.out.println("Target: ");
+                System.out.print("Target: ");
                 ChessPosition target = UI.readChessPosition(sc);
 
                 ChessPiece capturedPiece = chessMatch.performChessMove(source,target);
             } catch (ChessException e){
                 System.out.println(e.getMessage());
-                System.out.println("Hit Enter");
+                System.out.println("Hit Enter...");
                 sc.nextLine();
             } catch (InputMismatchException e){
                 System.out.println(e.getMessage());
-                System.out.println("Hit Enter");
+                System.out.println("Hit Enter...");
                 sc.nextLine();
             }
 
